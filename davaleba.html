@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration page</title>
+</head>
+<body>
+    <div id="registration">
+
+    </div>
+    <div id="container">
+        <input type="checkbox" id="checkbox">
+        <label id="rm">Remember me</label>
+    </div>
+    <div id="username">
+        <input type="text"  id="name">
+        <button id="log in">LOG IN</button>
+        <input type="password"  id="password">
+    </div>
+
+    <script>
+        var input = document.getElementById("name")
+        input.style.height = "35px"
+
+        var password = document.getElementById("password")
+        password.style.height = "80%"
+        password.style.width = "30px"
+
+        var btn = document.getElementById("log in")
+        btn.style.width = "40%"
+        btn.style.height = "30px"
+        btn.style.border = "2px"
+        btn.style.padding = "15px"
+
+        var label = document.getElementById("rm")
+        label.style.color="blue"
+
+        function mouseOver (){
+            btn.style.background = "blue"
+        }
+
+        function mouseOut(){
+            btn.style.background = "rgb(255,250,250)"
+        }
+
+        function errorMessage(){
+            alert("მომხარებელი წარმატებით დარეგისტრირდა")
+        }
+
+        btn.addEventListener("mouseover", mouseOver)
+        btn.addEventListener("mouseout", mouseOut)
+
+
+        if (input.value ===  ""){
+            btn.addEventListener('click', errorMessage)
+        }
+
+        input.addEventListener('keydown',function(event){
+            event.preventDefault()
+            console.log(event);
+            event.target.value = event.target.value + event.key.toUpperCase()
+        })
+
+
+        
+</script>
+
+
